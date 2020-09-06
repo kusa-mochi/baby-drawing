@@ -1,9 +1,9 @@
 <template>
   <canvas
     id="drawing-canvas"
-    @mousedown="startPainting"
-    @mouseup="finishedPainting"
-    @mousemove="draw"
+    @pointerdown="startPainting"
+    @pointerup="finishedPainting"
+    @pointermove="draw"
   ></canvas>
 </template>
 
@@ -19,12 +19,14 @@ export default {
   },
   methods: {
     startPainting(e) {
+      console.log("start painting.");
       this.painting = true;
-      console.log(this.painting);
       this.draw(e);
     },
     draw(e) {
+      console.log("draw.");
       if (!this.painting) return;
+      console.log("pen moving.");
       this.ctx.lineWidth = 10;
       this.ctx.lineCap = "round";
       this.ctx.lineTo(e.clientX, e.clientY);
@@ -33,8 +35,8 @@ export default {
       this.ctx.moveTo(e.clientX, e.clientY);
     },
     finishedPainting() {
+      console.log("finish painting.");
       this.painting = false;
-      console.log(this.painting);
       this.ctx.beginPath();
     },
   },
@@ -50,4 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#drawing-canvas {
+    touch-action: none;
+}
 </style>
