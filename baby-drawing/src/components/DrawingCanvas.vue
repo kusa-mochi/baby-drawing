@@ -14,6 +14,7 @@ export default {
       canvas: null,
       ctx: null,
       painting: false,
+      penColor: "green",
       vueCanvas: null,
     };
   },
@@ -29,6 +30,7 @@ export default {
       console.log("pen moving.");
       this.ctx.lineWidth = 10;
       this.ctx.lineCap = "round";
+      this.ctx.strokeStyle = this.penColor;
       this.ctx.lineTo(e.clientX, e.clientY);
       this.ctx.stroke();
       this.ctx.beginPath();
