@@ -28,7 +28,7 @@ export default {
       console.log("draw.");
       if (!this.painting) return;
       console.log("pen moving.");
-      this.ctx.lineWidth = 10;
+      this.ctx.lineWidth = 30 * e.pressure;
       this.ctx.lineCap = "round";
       this.ctx.strokeStyle = this.penColor;
       this.ctx.lineTo(e.clientX, e.clientY);
