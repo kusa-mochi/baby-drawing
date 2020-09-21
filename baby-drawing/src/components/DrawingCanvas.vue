@@ -9,6 +9,12 @@
 
 <script>
 export default {
+  beforeDestroy() {
+    window.removeEventListener("keydown", this.keyAction);
+  },
+  created() {
+    window.addEventListener("keydown", this.keyAction);
+  },
   data() {
     return {
       canvas: null,
@@ -41,6 +47,13 @@ export default {
       this.painting = false;
       this.ctx.beginPath();
     },
+    keyAction(e) {
+      // Delete key
+      if (e.keyCode == 46) {
+        // clear canvas
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      }
+    },
   },
   mounted() {
     this.canvas = document.getElementById("drawing-canvas");
@@ -55,6 +68,6 @@ export default {
 
 <style lang="scss" scoped>
 #drawing-canvas {
-    touch-action: none;
+  touch-action: none;
 }
 </style>
