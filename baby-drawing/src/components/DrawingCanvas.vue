@@ -12,6 +12,16 @@ export default {
   beforeDestroy() {
     window.removeEventListener("keydown", this.keyAction);
   },
+  computed: {
+    penColor: {
+      get() {
+        return this.$store.state.penColor;
+      },
+      set(newValue) {
+        this.$store.state.penColor = newValue;
+      },
+    },
+  },
   created() {
     window.addEventListener("keydown", this.keyAction);
   },
@@ -20,7 +30,6 @@ export default {
       canvas: null,
       ctx: null,
       painting: false,
-      penColor: "green",
       vueCanvas: null,
     };
   },
@@ -59,10 +68,20 @@ export default {
     this.canvas = document.getElementById("drawing-canvas");
     this.ctx = this.canvas.getContext("2d");
     this.vueCanvas = this.ctx;
-    this.canvas.height = window.innerHeight;
-    this.canvas.width = window.innerWidth;
+    this.canvas.height = this.height;
+    this.canvas.width = this.width;
   },
   name: "DrawingCanvas",
+  props: {
+    height: {
+      type: Number,
+      required: true,
+    },
+    width: {
+      type: Number,
+      required: true,
+    },
+  },
 };
 </script>
 
