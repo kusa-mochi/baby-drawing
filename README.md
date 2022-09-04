@@ -15,6 +15,16 @@ Come on, let's draw!
 
 - To end the app, press Alt+F4 keys. (There are no buttons on the canvas)
 
+## How to use
+
+1. Install the app using the installer.
+1. Launch the app.
+1. Now draw!
+
+When the pen tip moves onto the color palette on the right side of the screen, the pen color changes to that color.
+
+At this time, the pen can be floating off the device.
+
 ## Note
 
 - To enable pressure detection, you must use a pen device made by WACOM, and install the latest supported WACOM drivers.
