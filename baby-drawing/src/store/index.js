@@ -7,9 +7,9 @@ export default new Vuex.Store({
   state: {
     paletteWidth: 150,
     paletteColors: [
-      "#52e820", "#1912e6", "#ff1500", "#e600ff", "#ffff00"
+      "#FFF464", "#FEF102", "#80422B", "#D69E01", "#E73930", "#E50045", "#90C320", "#018850", "#0070BC", "#003567", "#3E3A39", "#FFFFFF"
     ],
-    penColor: "#169632",
+    penColor: "#E73930",
     penMaxWidth: 60
   },
   mutations: {
