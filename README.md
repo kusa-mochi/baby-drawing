@@ -1,7 +1,7 @@
 # baby-drawing
 Drawing app for every babies.
 
-Babies can draw colored lines using a pen device WITHOUT ANY BUTTONS, ANY CONTROLS AND ANY WINDOWS so that drawing is not interrupted by non-canvas operations.
+Babies can draw colored lines using a pen device **WITHOUT ANY BUTTONS, ANY CONTROLS AND ANY WINDOWS** so that drawing is not interrupted by non-canvas operations.
 
 ![capture](https://github.com/kusa-mochi/baby-drawing/raw/master/baby-drawing-capture.png "capture")
 
